@@ -15,32 +15,48 @@ const singerStyle = {
 function App() {
   return (
     <div className="App">
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
+      <Person name="Rubel " naika="Musomi"></Person>
+      <Person name="Bapparaj" naika="sabnur"></Person>
+      <Person name="shahin" naika="Mitu"></Person>
       <h3>THis is New Component .</h3>
-      <Friend></Friend>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend name="Mohammod Azad" job="Emam"></Friend>
+      <Friend name="Sajahan" job="BD Army"></Friend>
+      {/* femily member  */}
+      <h3>New Component Add to Femily Member</h3>
+      <Femily name='Father Name : Jahangir Alom' propession='Farmer'></Femily>
+      <Femily name='Mother Name: Pervin Akter' propession='Housewife'></Femily>
+      <Femily name='Brother Name : Tuhin' propession='BD Army'></Femily>
+      <Femily name='Shahin' propession='student'></Femily>
+      <Femily name='small Brother : Rubinur Rohoman' propession='student'></Femily>
     </div>
   );
 }
 
-function Person() {
+function Person(props) {
+  // console.log(props);
   return (
     <div className='person'>
-      <h1>Sakib al hasan</h1>
-      <p>Profession : Cricketer</p>
+      <h1>{props.name}</h1>
+      <p>naika : {props.naika}</p>
     </div>
   );
 }
 
-function Friend() {
+function Friend(props) {
+  console.log(props);
   return (
     <div className='container'>
-      <h1>Sharif </h1>
-      <p>Job : maramari.</p>
+      <h1>{props.name} </h1>
+      <p>Job : {props.job}</p>
+    </div>
+  )
+}
+
+function Femily(props) {
+  return (
+    <div className='person'>
+      <h1>{props.name}</h1>
+      <p>Propession : {props.propession}</p>
     </div>
   )
 }
